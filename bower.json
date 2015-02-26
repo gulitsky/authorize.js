@@ -1,0 +1,14 @@
+{
+  "name": "authorize.js",
+  "version": "0.1.0",
+  "authors": [
+    "Andrey Gulitskiy <andrey.gulitskiy@rosberry.com>"
+  ],
+  "description": "JavaScript SDK for Authorize.net",
+  "main": "dist/authorize.js",
+  "keywords": [
+    "authorize.net"
+  ],
+  "license": "MIT",
+  "homepage": "http://github.com/wyorma/authorize.js"
+}
