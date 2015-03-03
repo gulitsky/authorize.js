@@ -1,8 +1,7 @@
 describe('authorize.js', function() {
 	'use strict';
 
-	var a, a2;
-	var success, error;
+	var a, success, error;
 
 	var testParams = {
 		test: 'test'
@@ -38,7 +37,7 @@ describe('authorize.js', function() {
 	});
 
 	it('should make request to production server', function() {
-		a2 = new Authorize('test', 'test');
+		var a2 = new Authorize('test', 'test');
 		a2.test(testParams);
 		expect(jasmine.Ajax.requests.mostRecent().url).toBe('https://api.authorize.net/xml/v1/request.api');
 		expect(jasmine.Ajax.requests.mostRecent().method).toBe('POST');

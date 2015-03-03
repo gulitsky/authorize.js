@@ -112,6 +112,26 @@
 			xhr.send(JSON.stringify(payload));
 		};
 
+		this.createCustomerPaymentProfile = function(params, success, error) {
+			var xhr = getXhr();
+			var payload = constructPayload('createCustomerPaymentProfile', params);
+			xhr.onreadystatechange = function() {
+				if (this.readyState == 4) {
+					var json = JSON.parse(this.responseText);
+					if (json.messages.resultCode != 'Error') {
+						if (typeof success === 'function') {
+							success(json);
+						}
+					} else {
+						if (typeof error === 'function') {
+							error(json);
+						}
+					}
+				}
+			};
+			xhr.send(JSON.stringify(payload));
+		};
+
 		if (typeof sandbox !== 'undefined' && sandbox) {
 			sandboxMode = true;
 		}
